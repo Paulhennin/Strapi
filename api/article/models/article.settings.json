@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "name": "Article",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "author": {
+      "model": "author",
+      "via": "articles"
+    },
+    "chapeau": {
+      "type": "string"
+    },
+    "categories": {
+      "collection": "categorie",
+      "via": "articles",
+      "dominant": true
+    },
+    "updated": {
+      "type": "datetime"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}
